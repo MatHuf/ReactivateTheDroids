@@ -1,0 +1,27 @@
+.panel-container {
+  height: 600px;
+  border: solid black 25px;
+  background-color: #092968;
+  border-radius: 50px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.data-section {
+  height: 200px;
+  width: 250px;
+}
+
+.droid-section {
+  height: 400px;
+  width: 250px;
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid 2px #6fa2cb;
+}
