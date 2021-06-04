@@ -24,4 +24,5 @@
   flex-direction: row;
   justify-content: center;
   border: solid 2px #6fa2cb;
+  border-radius: 25px;
 }

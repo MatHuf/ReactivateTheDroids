@@ -1,0 +1,26 @@
+.action-button-container {
+  background-color: #07235c;
+  width: 100px;
+  height: 60px;
+  margin: 5px;
+  display: grid;
+}
+
+.action-button-top {
+  border-left: solid 2px #6fa2cb;;
+  border-top: solid 2px #6fa2cb;
+  border-right: solid 2px #6fa2cb;
+  grid-row: 1;
+}
+
+.action-button-mid {
+  border: none;
+  grid-row: 2;
+}
+
+.action-button-bottom {
+  border-left: solid 2px #6fa2cb;;
+  border-bottom: solid 2px #6fa2cb;
+  border-right: solid 2px #6fa2cb;
+  grid-row: 3;
+}
