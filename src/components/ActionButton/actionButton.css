@@ -4,6 +4,7 @@
   height: 60px;
   margin: 5px;
   display: grid;
+  grid-template-rows: 3fr 1fr 3fr;
 }
 
 .action-button-top {

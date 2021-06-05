@@ -16,13 +16,84 @@
 
 .droid-section {
   height: 400px;
-  width: 250px;
 }
 
 .controls-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   border: solid 2px #6fa2cb;
   border-radius: 25px;
+}
+
+.controls-deco {
+  width: 20px;
+  height: 20px;
+  border: solid 2px #456883;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.triangle {
+  
+}
+
+.droid-footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 35px;
+ 
+}
+
+.footer-outer {
+  border-top: solid 2px #456883;
+  border-bottom: solid 1px #456883;
+}
+
+.footer-center-outer {
+  border-left: solid 2px #456883;;
+  border-bottom: solid 2px #456883;
+  border-right: solid 2px #456883;
+}
+
+.footer-inner {
+  border-top: solid 1px #456883;
+  border-bottom: solid 1px #456883;
+  height: 15px;
+  margin-top: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-inner-left {
+  border-right: solid 1px #456883;
+  margin-right: 10px;
+  flex-direction: row-reverse;
+}
+
+.footer-inner-right {
+  border-left: solid 1px #456883;
+  margin-left: 10px;
+  flex-direction: row;
+}
+
+.faux-button {
+  height: 8px;
+  width: 16px;
+}
+
+.faux-button-left {
+  border-top: solid 2px #456883;
+  border-right: solid 2px #456883;
+  margin-right: 3px;
+}
+
+.faux-button-right {
+  border-left: solid 2px #456883;
+  border-bottom: solid 2px #456883;
+  margin-left: 3px;
 }
