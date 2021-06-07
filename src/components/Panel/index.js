@@ -21,11 +21,27 @@ const Panel = props => {
 						</div>
 					</div>
 					<div className="footer-center-outer">
-						<div className="faux-button faux-button-triple"></div>
-						<div className="faux-button faux-button-text"></div>
-						<div className="faux-button faux-button-center"></div>
-						<div className="faux-button faux-button-text"></div>
-						<div className="faux-button faux-button-triple"></div>
+						<div className="footer-outline-break-container">
+							<div className="break-top-left">
+								<div className="break-top-extention"></div>
+							</div>
+							<div className="break-center"></div>
+							<div></div>
+							<div className="break-bottom-left"></div>
+						</div>
+						<div className="faux-button-container">
+							<div className="faux-button faux-button-text">&lt;</div>
+							<div className="faux-button faux-button-center"></div>
+							<div className="faux-button faux-button-text">&gt;</div>
+						</div>
+						<div className="footer-outline-break-container">
+							<div className="break-top-right">
+								<div className="break-top-extention"></div>
+							</div>
+							<div className="break-center"></div>
+							<div></div>
+							<div className="break-bottom-right"></div>
+						</div>
 					</div>
 					<div className="footer-outer">
 						<div className="footer-inner footer-inner-right">
