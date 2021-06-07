@@ -14,6 +14,29 @@ const Panel = props => {
 		<div className="panel-container">
 			<div className="data-section"></div>
 			<div className="droid-section">
+				<div className="droid-display">
+					<div className="display-side-container">
+						<div className="display-top-right"></div>
+						<div className="display-segmented-container display-segment-margin">
+							<div className="display-left-segment"></div>
+							<div className="display-center-lower-segment"></div>
+							<div className="display-right-segment"></div>
+						</div>
+					</div>
+					<div></div>
+					<div className="display-side-container">
+						<div className="display-segmented-container">
+							<div className="display-left-segment"></div>
+							<div className="display-center-upper-segment"></div>
+							<div className="display-right-segment"></div>
+						</div>
+						<div className="display-segmented-container display-segment-margin">
+							<div className="display-left-segment"></div>
+							<div className="display-center-lower-segment"></div>
+							<div className="display-right-segment"></div>
+						</div>
+					</div>
+				</div>
 				<div className="droid-footer">
 					<div className="footer-outer">
 						<div className="footer-inner footer-inner-left">
