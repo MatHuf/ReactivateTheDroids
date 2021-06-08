@@ -12,7 +12,27 @@ const Panel = props => {
 
 	return (
 		<div className="panel-container">
-			<div className="data-section"></div>
+			<div className="data-section">
+				<div className="data-column-subdivided">
+					<div className="data-column data-column-left">
+						<div></div>
+						<div className="data-column-inner"></div>
+					</div>
+					<div className="data-column-detail"></div>
+				</div>
+				<div className="data-column">
+					<div></div>
+					<div className="data-column-inner"></div>
+				</div>
+				<div className="data-column">
+					<div></div>
+					<div className="data-column-inner"></div>
+				</div>
+				<div className="data-column data-column-right">
+					<div></div>
+					<div className="data-column-inner"></div>
+				</div>
+			</div>
 			<div className="droid-section">
 				<div className="droid-display">
 					<div className="display-side-container">
