@@ -17,43 +17,57 @@ const Panel = props => {
 					<div className="data-column data-column-left">
 						<div></div>
 						<div className="data-column-inner">
-							T<br />Q
+							T<br />6
 						</div>
 					</div>
 					<div className="data-column-detail"></div>
 				</div>
 				<div className="data-column">
 					<div></div>
-					<div className="data-column-inner"></div>
+					<div className="data-column-inner">
+						I<br />M<br />O<br />4
+					</div>
 				</div>
 				<div className="data-column">
 					<div></div>
-					<div className="data-column-inner"></div>
+					<div className="data-column-inner">
+						U<br />X<br />9<br />F
+					</div>
 				</div>
 				<div className="data-column data-column-right">
 					<div></div>
-					<div className="data-column-inner"></div>
+					<div className="data-column-inner">
+						8<br />K<br />T
+					</div>
 				</div>
 			</div>
 			<div className="droid-section">
 				<div className="droid-display">
 					<div className="display-side-container">
-						<div className="display-top-right"></div>
+						<div className="display-top-left">
+							E<br />Y
+						</div>
 						<div className="display-segmented-container display-segment-margin">
 							<div className="display-left-segment"></div>
 							<div className="display-center-lower-segment"></div>
-							<div className="display-right-segment"></div>
+							<div className="display-right-segment">
+								N<br />H<br />D
+							</div>
 						</div>
 					</div>
 					<div></div>
 					<div className="display-side-container">
 						<div className="display-segmented-container">
-							<div className="display-left-segment"></div>
+							<div className="display-left-segment">
+								H<br />O<br />T
+							</div>
 							<div className="display-center-upper-segment"></div>
 							<div className="display-right-segment"></div>
 						</div>
 						<div className="display-segmented-container display-segment-margin">
-							<div className="display-left-segment"></div>
+							<div className="display-left-segment">
+								R<br />8<br />P
+							</div>
 							<div className="display-center-lower-segment"></div>
 							<div className="display-right-segment"></div>
 						</div>
