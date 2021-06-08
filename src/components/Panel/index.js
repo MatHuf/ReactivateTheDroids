@@ -16,7 +16,9 @@ const Panel = props => {
 				<div className="data-column-subdivided">
 					<div className="data-column data-column-left">
 						<div></div>
-						<div className="data-column-inner"></div>
+						<div className="data-column-inner">
+							T<br />Q
+						</div>
 					</div>
 					<div className="data-column-detail"></div>
 				</div>
