@@ -47,6 +47,19 @@
   border-bottom: solid 1px #6fa2cb;
   border-right: solid 1px #6fa2cb;
   margin: 2px;
+  padding: 2px;
+}
+
+.flex-to-bottom-left {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+
+.flex-to-bottom-right {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
 .droid-section {
@@ -74,7 +87,10 @@
 }
 
 .triangle {
-  
+  -webkit-text-stroke: 2px #456883;;
+  color: transparent;
+  font-size: 20px;
+  transform: rotate(90deg);
 }
 
 .droid-display {

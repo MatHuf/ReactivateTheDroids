@@ -16,27 +16,29 @@ const Panel = props => {
 				<div className="data-column-subdivided">
 					<div className="data-column data-column-left">
 						<div></div>
-						<div className="data-column-inner">
-							T<br />6
+						<div className="data-column-inner flex-to-bottom-left">
+							<span>
+								T<br />6
+							</span>
 						</div>
 					</div>
 					<div className="data-column-detail"></div>
 				</div>
 				<div className="data-column">
 					<div></div>
-					<div className="data-column-inner">
+					<div className="data-column-inner flex-to-bottom-right">
 						I<br />M<br />O<br />4
 					</div>
 				</div>
 				<div className="data-column">
 					<div></div>
-					<div className="data-column-inner">
+					<div className="data-column-inner flex-to-bottom-right">
 						U<br />X<br />9<br />F
 					</div>
 				</div>
 				<div className="data-column data-column-right">
 					<div></div>
-					<div className="data-column-inner">
+					<div className="data-column-inner flex-to-bottom-right">
 						8<br />K<br />T
 					</div>
 				</div>
@@ -44,13 +46,13 @@ const Panel = props => {
 			<div className="droid-section">
 				<div className="droid-display">
 					<div className="display-side-container">
-						<div className="display-top-left">
+						<div className="display-top-left flex-to-bottom-right">
 							E<br />Y
 						</div>
 						<div className="display-segmented-container display-segment-margin">
 							<div className="display-left-segment"></div>
 							<div className="display-center-lower-segment"></div>
-							<div className="display-right-segment">
+							<div className="display-right-segment flex-to-bottom-right">
 								N<br />H<br />D
 							</div>
 						</div>
@@ -58,14 +60,14 @@ const Panel = props => {
 					<div></div>
 					<div className="display-side-container">
 						<div className="display-segmented-container">
-							<div className="display-left-segment">
+							<div className="display-left-segment flex-to-bottom-left">
 								H<br />O<br />T
 							</div>
 							<div className="display-center-upper-segment"></div>
 							<div className="display-right-segment"></div>
 						</div>
 						<div className="display-segmented-container display-segment-margin">
-							<div className="display-left-segment">
+							<div className="display-left-segment flex-to-bottom-left">
 								R<br />8<br />P
 							</div>
 							<div className="display-center-lower-segment"></div>
@@ -113,7 +115,7 @@ const Panel = props => {
 				<div className="controls-deco circle"></div>
 				<ActionButton action={deactivate} />
 				<ActionButton action={activate} />
-				<div className="controls-deco triangle"></div>
+				<div className="triangle">&#9650;</div>
 			</div>
 		</div>
 	);
