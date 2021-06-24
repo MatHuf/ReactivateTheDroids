@@ -79,7 +79,7 @@
 .controls-deco {
   width: 20px;
   height: 20px;
-  border: solid 2px #456883;
+  border: solid 1px #456883;
 }
 
 .circle {
@@ -87,7 +87,7 @@
 }
 
 .triangle {
-  -webkit-text-stroke: 2px #456883;;
+  -webkit-text-stroke: 1px #456883;;
   color: transparent;
   font-size: 20px;
   transform: rotate(90deg);
