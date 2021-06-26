@@ -44,6 +44,8 @@ const Lottie = props => {
 		}
 	}, [props.direction, lottieInstance]);
 
+	// TODO add listener for onComplete event and provide prop for callback
+
 	return <div id={props.id ?? ""} ref={lottieContainer} className={props.className ?? ""}></div>;
 };
 
