@@ -44,7 +44,20 @@ const Lottie = props => {
 		}
 	}, [props.direction, lottieInstance]);
 
-	// TODO add listener for onComplete event and provide prop for callback
+	// TODO move to config?
+	useEffect(() => {
+		if (props.onComplete && lottieInstance) {
+			lottieInstance.addEventListener("complete", props.onComplete);
+		}
+	}, [props.onComplete, lottieInstance]);
+
+	useEffect(() => {
+		return () => {
+			if (props.onComplete && lottieInstance) {
+				lottieInstance.removeEventListener("complete", props.onComplete);
+			}
+		};
+	}, []);
 
 	return <div id={props.id ?? ""} ref={lottieContainer} className={props.className ?? ""}></div>;
 };

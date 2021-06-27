@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import PanelHeader from "./PanelHeader";
 import PanelMain from "./PanelMain";
 import PanelFooter from "./PanelFooter";
@@ -13,13 +13,13 @@ const Panel = props => {
 	const activate = () => {
 		switch (mainActive) {
 			case false:
-				setMainAnimationState(lottiePlayStates.play);
 				setMainAnimationDirection(lottiePlayDirections.forward);
+				setMainAnimationState(lottiePlayStates.play);
 				setMainActivate(true);
 				break;
 			case true:
-				setMainAnimationState(lottiePlayStates.play);
 				setMainAnimationDirection(lottiePlayDirections.reverse);
+				setMainAnimationState(lottiePlayStates.play);
 				setMainActivate(false);
 				break;
 			//no default
@@ -30,10 +30,12 @@ const Panel = props => {
 		console.log("deactivate clicked");
 	};
 
+	const onActivateComplete = useCallback(() => setMainAnimationState(lottiePlayStates.pause), []);
+
 	return (
 		<div className="panel-container">
 			<PanelHeader />
-			<PanelMain animationState={mainAnimationState} direction={mainAnimationDirection} />
+			<PanelMain animationState={mainAnimationState} direction={mainAnimationDirection} onComplete={onActivateComplete} />
 			<PanelFooter onActivate={activate} onDeactivate={deactivate} />
 		</div>
 	);

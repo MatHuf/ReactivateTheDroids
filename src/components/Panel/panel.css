@@ -11,6 +11,7 @@
   width: 300px;
   display: grid;
   grid-template-rows: 2fr 7fr 1fr;
+  user-select: none;
 }
 
 .data-section {
@@ -254,5 +255,4 @@
   color: var(--dim-highlight);
   font-weight: bold;
   margin-top: 2px;
-  user-select: none;
 }

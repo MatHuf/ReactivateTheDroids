@@ -18,7 +18,7 @@ const PanelMain = props => {
 						</div>
 					</div>
 				</div>
-				<Lottie animation={B1_Activate_Draft} playState={props.animationState} />
+				<Lottie animation={B1_Activate_Draft} playState={props.animationState} onComplete={props.onComplete} direction={props.direction} />
 				<div className="display-side-container">
 					<div className="display-segmented-container">
 						<div className="display-left-segment flex-to-bottom-left">
