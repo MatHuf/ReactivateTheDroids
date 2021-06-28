@@ -1,0 +1,39 @@
+.controls-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px var(--bright-highlight);
+  border-radius: 25px;
+}
+
+.controls-deco {
+  width: 20px;
+  height: 20px;
+  border: solid 1px var(--dim-highlight);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.triangle {
+  -webkit-text-stroke: 1px var(--dim-highlight);;
+  color: transparent;
+  font-size: 20px;
+  transform: rotate(90deg);
+}
+
+.main-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-button-text-left {
+  font-size: 1.75rem;
+}
+
+.main-button-text-right {
+  font-size: 0.75rem;
+}

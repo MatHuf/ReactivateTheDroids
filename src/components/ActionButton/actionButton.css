@@ -5,13 +5,20 @@
   margin: 5px;
   display: grid;
   grid-template-rows: 3fr 1fr 3fr;
+  position: relative;
 }
 
 .action-button-top {
-  border-left: solid 2px #6fa2cb;;
-  border-top: solid 2px #6fa2cb;
-  border-right: solid 2px #6fa2cb;
+  border-left: solid 2px var(--bright-highlight);
+  border-top: solid 2px var(--bright-highlight);
+  border-right: solid 2px var(--bright-highlight);
   grid-row: 1;
+}
+
+.action-button-container:active .action-button-top {
+  border-left: solid 2px var(--active-highlight);
+  border-top: solid 2px var(--active-highlight);
+  border-right: solid 2px var(--active-highlight);
 }
 
 .action-button-mid {
@@ -20,8 +27,28 @@
 }
 
 .action-button-bottom {
-  border-left: solid 2px #6fa2cb;;
-  border-bottom: solid 2px #6fa2cb;
-  border-right: solid 2px #6fa2cb;
+  border-left: solid 2px var(--bright-highlight);;
+  border-bottom: solid 2px var(--bright-highlight);
+  border-right: solid 2px var(--bright-highlight);
   grid-row: 3;
+}
+
+.action-button-container:active .action-button-bottom {
+  border-left: solid 2px var(--active-highlight);
+  border-bottom: solid 2px var(--active-highlight);
+  border-right: solid 2px var(--active-highlight);
+}
+
+.action-button-active-center  {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 9;
+  width: 90px;
+  height: 50px;
+}
+
+.action-button-container:active .action-button-active-center {
+  color: var(--active-highlight);
+  background: var(--active-highlight);
 }

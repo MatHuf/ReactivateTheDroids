@@ -8,6 +8,12 @@ body {
   background-color: #45495a;
 }
 
+:root {
+  --bright-highlight: #6fa2cb;
+  --dim-highlight: #456883;
+  --active-highlight: #d39636;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

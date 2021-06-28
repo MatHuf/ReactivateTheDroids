@@ -1,6 +1,7 @@
 import React from "react";
 import Lottie from "../Lottie";
 import B1_Activate_Draft from "../../animations/B1_Activate_Draft.json";
+import "./panelMain.css";
 
 const PanelMain = props => {
 	return (

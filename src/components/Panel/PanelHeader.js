@@ -1,4 +1,5 @@
 import React from "react";
+import "./panelHeader.css";
 
 const PanelHeader = props => {
 	return (
