@@ -1,5 +1,6 @@
 import React from "react";
 import ActionButton from "../ActionButton";
+import ScrollingChart from "../ScrollingChart";
 import "./panelFooter.css";
 
 const PanelFooter = props => {
@@ -17,7 +18,7 @@ const PanelFooter = props => {
 	return (
 		<div className="controls-section">
 			<div className="controls-deco circle"></div>
-			<ActionButton action={props.onDeactivate} />
+			<ActionButton action={props.onDeactivate} content={<ScrollingChart />} />
 			<ActionButton action={props.onActivate} content={activateButtonContent} />
 			<div className="triangle">&#9650;</div>
 		</div>
