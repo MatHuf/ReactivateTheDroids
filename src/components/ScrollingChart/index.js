@@ -6,8 +6,31 @@ const ScrollingChart = props => {
 	const barPool = useRef([]);
 
 	useEffect(() => {
+		if (barPool.current.length === 0) {
+			populatePool();
+		}
 		draw();
-	}, []);
+	}, [barPool.current.length]);
+
+	const populatePool = () => {
+		// 30 Bars needed on screen
+		for (let i = 0; i < 30; i++) {
+			barPool.current.push({
+				// TODO wave height
+				position: i * 20,
+			});
+		}
+	};
+
+	const moveBars = () => {
+		let canvas = canvasRef.current;
+		let ctx = canvas.getContext("2d");
+
+		barPool.current.forEach(bar => {
+			// Allow bars to move fully off canvas before resetting
+			bar.position <= -20 ? (bar.position = ctx.canvas.width) : bar.position--;
+		});
+	};
 
 	const draw = () => {
 		let canvas = canvasRef.current;
@@ -17,21 +40,28 @@ const ScrollingChart = props => {
 		// Draw animated shapes
 		// Restore canvas state
 
-		console.log(ctx);
+		moveBars();
 
 		// Prepare canvas
 		ctx.globalCompositeOperation = "destination-over";
-		ctx.clearRect(0, 0, 100, 60); // ActionButton size
+		ctx.clearRect(0, 0, 300, 60); // ActionButton size
 
 		// Save canvas state
-		ctx.fillStyle = "#6fa2cb";
+		ctx.fillStyle = "#ffffff"; //"#6fa2cb";
 		ctx.save();
 
 		// Array of rects to draw
 		// Increment position
 		// Min/Max positions, when reached max, reset to min to loop
-
-		ctx.fillRect(canvasRef.current.height, canvasRef.current.height, 5, 35);
+		if (barPool.current.length) {
+			barPool.current.forEach(bar => {
+				let posX = bar.position;
+				let posY = 15; // TODO
+				if (posX < ctx.canvas.width) {
+					ctx.fillRect(posX, posY, 15, 35);
+				}
+			});
+		}
 
 		ctx.restore();
 
