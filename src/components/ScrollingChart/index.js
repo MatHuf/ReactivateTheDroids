@@ -17,15 +17,14 @@ const ScrollingChart = props => {
 		ctx.clearRect(0, 0, 300, 300);
 
 		// Save canvas state
-
 		ctx.save();
 
 		// Draw bars
 		if (barPool.current.length) {
 			barPool.current.forEach((bar, i) => {
-				// Bars should be higher on right side
 				let barWidth = 10;
 				let barHeight = 25;
+				// Higher amplitude on right side
 				let amplitude = (isActive ? 15 : 5) * bar.position * 0.01;
 				let posX = bar.position;
 				let posY = canvas.height * 0.6 - (1 + Math.cos(i + animationTime.current * 0.5)) * amplitude;

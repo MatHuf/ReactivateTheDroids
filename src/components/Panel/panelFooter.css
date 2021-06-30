@@ -24,16 +24,31 @@
   transform: rotate(90deg);
 }
 
-.main-button-container {
+.button-content-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.main-button-text-left {
+.button-text-left {
   font-size: 1.75rem;
+  z-index: 10;
 }
 
-.main-button-text-right {
+.button-text-right {
   font-size: 0.75rem;
+  z-index: 10;
+}
+
+.chart-button-container {
+  width: 90px;
+  height: 50px;
+  position: relative;
+}
+
+.chart-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
 }
