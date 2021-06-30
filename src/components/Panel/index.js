@@ -36,7 +36,7 @@ const Panel = props => {
 		<div className="panel-container">
 			<PanelHeader />
 			<PanelMain animationState={mainAnimationState} direction={mainAnimationDirection} onComplete={onActivateComplete} />
-			<PanelFooter onActivate={activate} onDeactivate={deactivate} />
+			<PanelFooter onActivate={activate} onDeactivate={deactivate} isActive={mainActive} />
 		</div>
 	);
 };

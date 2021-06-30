@@ -18,7 +18,7 @@ const PanelFooter = props => {
 	return (
 		<div className="controls-section">
 			<div className="controls-deco circle"></div>
-			<ActionButton action={props.onDeactivate} content={<ScrollingChart />} />
+			<ActionButton action={props.onDeactivate} content={<ScrollingChart isActive={props.isActive} />} />
 			<ActionButton action={props.onActivate} content={activateButtonContent} />
 			<div className="triangle">&#9650;</div>
 		</div>

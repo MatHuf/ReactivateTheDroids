@@ -4,19 +4,60 @@ import "./scrollingChart.css";
 const ScrollingChart = props => {
 	const canvasRef = useRef();
 	const barPool = useRef([]);
+	const animationTime = useRef(0);
+
+	const draw = isActive => {
+		let canvas = canvasRef.current;
+		let ctx = canvas.getContext("2d");
+
+		moveBars();
+
+		// Prepare canvas
+		ctx.globalCompositeOperation = "destination-over";
+		ctx.clearRect(0, 0, 300, 300);
+
+		// Save canvas state
+		ctx.fillStyle = "#6fa2cb";
+		ctx.save();
+
+		// Draw bars
+		if (barPool.current.length) {
+			barPool.current.forEach((bar, i) => {
+				// Bars should be higher on right side
+				let amplitude = (isActive ? 15 : 5) * bar.position * 0.01;
+				let posX = bar.position;
+				let posY = canvas.height * 0.5 - (1 + Math.cos(i + animationTime.current * 0.5)) * amplitude;
+				if (posX < ctx.canvas.width) {
+					ctx.fillRect(posX, posY, 15, 35);
+				}
+			});
+		}
+
+		ctx.restore();
+	};
 
 	useEffect(() => {
 		if (barPool.current.length === 0) {
 			populatePool();
 		}
-		draw();
-	}, [barPool.current.length]);
+		let frameId;
+
+		const render = () => {
+			animationTime.current += 0.2;
+			draw(props.isActive);
+			frameId = window.requestAnimationFrame(render);
+		};
+		render();
+
+		return () => {
+			window.cancelAnimationFrame(frameId);
+		};
+	}, [draw]);
 
 	const populatePool = () => {
-		// 30 Bars needed on screen
-		for (let i = 0; i < 30; i++) {
+		// 16 Bars needed on screen
+		for (let i = 0; i < 16; i++) {
 			barPool.current.push({
-				// TODO wave height
 				position: i * 20,
 			});
 		}
@@ -30,42 +71,6 @@ const ScrollingChart = props => {
 			// Allow bars to move fully off canvas before resetting
 			bar.position <= -20 ? (bar.position = ctx.canvas.width) : bar.position--;
 		});
-	};
-
-	const draw = () => {
-		let canvas = canvasRef.current;
-		let ctx = canvas.getContext("2d");
-		// Clear canvas
-		// Save canvas state (styles)
-		// Draw animated shapes
-		// Restore canvas state
-
-		moveBars();
-
-		// Prepare canvas
-		ctx.globalCompositeOperation = "destination-over";
-		ctx.clearRect(0, 0, 300, 60); // ActionButton size
-
-		// Save canvas state
-		ctx.fillStyle = "#ffffff"; //"#6fa2cb";
-		ctx.save();
-
-		// Array of rects to draw
-		// Increment position
-		// Min/Max positions, when reached max, reset to min to loop
-		if (barPool.current.length) {
-			barPool.current.forEach(bar => {
-				let posX = bar.position;
-				let posY = 15; // TODO
-				if (posX < ctx.canvas.width) {
-					ctx.fillRect(posX, posY, 15, 35);
-				}
-			});
-		}
-
-		ctx.restore();
-
-		window.requestAnimationFrame(draw);
 	};
 
 	return <canvas className="chart-container" ref={canvasRef} />;
