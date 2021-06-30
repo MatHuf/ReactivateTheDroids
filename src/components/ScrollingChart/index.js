@@ -17,7 +17,7 @@ const ScrollingChart = props => {
 		ctx.clearRect(0, 0, 300, 300);
 
 		// Save canvas state
-		ctx.fillStyle = "#6fa2cb";
+
 		ctx.save();
 
 		// Draw bars
@@ -27,8 +27,19 @@ const ScrollingChart = props => {
 				let amplitude = (isActive ? 15 : 5) * bar.position * 0.01;
 				let posX = bar.position;
 				let posY = canvas.height * 0.5 - (1 + Math.cos(i + animationTime.current * 0.5)) * amplitude;
+				// Gradients are globally positioned so need to move with bar
+
 				if (posX < ctx.canvas.width) {
-					ctx.fillRect(posX, posY, 15, 35);
+					// Draw top of bar
+					ctx.fillStyle = "#6fa2cb";
+					ctx.fillRect(posX, posY, 15, 25);
+					// Draw bottom of bar
+					let gradient = ctx.createLinearGradient(posX, 0, posX, canvas.height);
+					gradient.addColorStop(0, "#6fa2cb");
+					// gradient.addColorStop(0.1, "#6fa2cb");
+					gradient.addColorStop(1, "#092968");
+					ctx.fillStyle = gradient;
+					ctx.fillRect(posX, posY + 25, 15, canvas.height + 10);
 				}
 			});
 		}
