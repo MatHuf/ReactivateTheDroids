@@ -1,4 +1,5 @@
 import React from "react";
+import SegmentedMarker from "./SegmentedMarker";
 import "./panelHeader.css";
 
 const PanelHeader = props => {

@@ -1,0 +1,26 @@
+.marker-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  margin: 2px;
+}
+
+.marker-top {
+  background: rgba(192, 155, 109, 1);
+}
+
+.marker-mid-upper {
+  background: rgba(192, 155, 109, .75);
+}
+
+.marker-mid-lower {
+  background: rgba(192, 155, 109, 0.5);
+}
+
+.marker-bottom {
+  background: rgba(192, 155, 109, 0.25);
+}
