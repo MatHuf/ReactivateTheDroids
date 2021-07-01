@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from "react";
+import React, { useState, useCallback } from "react";
 import PanelHeader from "./PanelHeader";
 import PanelMain from "./PanelMain";
 import PanelFooter from "./PanelFooter";
@@ -9,7 +9,9 @@ import "./panel.css";
 const Panel = props => {
 	const [mainActive, setMainActivate] = useState(false);
 	const [mainAnimationState, setMainAnimationState] = useState(lottiePlayStates.stop);
-	const [mainAnimationDirection, setMainAnimationDirection] = useState(lottiePlayDirections.forward);
+	const [mainAnimationDirection, setMainAnimationDirection] = useState(
+		lottiePlayDirections.forward
+	);
 	const [signal, setSignal] = useSignal();
 
 	const activate = () => {
@@ -29,9 +31,7 @@ const Panel = props => {
 	};
 
 	const disconnect = () => {
-		// TODO show warning symbol animation instead of droid
 		setSignal(!signal);
-		console.log(signal);
 	};
 
 	const onActivateComplete = useCallback(() => setMainAnimationState(lottiePlayStates.pause), []);
@@ -39,7 +39,11 @@ const Panel = props => {
 	return (
 		<div className="panel-container">
 			<PanelHeader />
-			<PanelMain animationState={mainAnimationState} direction={mainAnimationDirection} onComplete={onActivateComplete} />
+			<PanelMain
+				animationState={mainAnimationState}
+				direction={mainAnimationDirection}
+				onComplete={onActivateComplete}
+			/>
 			<PanelFooter onActivate={activate} onDisconnect={disconnect} isActive={mainActive} />
 		</div>
 	);
