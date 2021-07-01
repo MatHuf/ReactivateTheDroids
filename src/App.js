@@ -1,13 +1,16 @@
 import Panel from "./components/Panel";
+import { SignalProvider } from "./context/signalContext";
 
 // Are styles need here?
 import "./App.css";
 
 function App() {
 	return (
-		<div className="App">
-			<Panel />
-		</div>
+		<SignalProvider>
+			<div className="App">
+				<Panel />
+			</div>
+		</SignalProvider>
 	);
 }
 

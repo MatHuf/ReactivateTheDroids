@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { useSignal } from "../../context/signalContext";
 import "./scrollingChart.css";
 
 const ScrollingChart = props => {
 	const canvasRef = useRef();
 	const barPool = useRef([]);
 	const animationTime = useRef(0);
+	const [signal] = useSignal();
 
 	const draw = isActive => {
 		let canvas = canvasRef.current;
@@ -27,7 +29,9 @@ const ScrollingChart = props => {
 				// Higher amplitude on right side
 				let amplitude = (isActive ? 15 : 5) * bar.position * 0.01;
 				let posX = bar.position;
-				let posY = canvas.height * 0.6 - (1 + Math.cos(i + animationTime.current * 0.5)) * amplitude;
+				let posY = signal
+					? canvas.height * 0.6 - (1 + Math.cos(i + animationTime.current * 0.5)) * amplitude
+					: canvas.height - 10;
 				if (posX < ctx.canvas.width) {
 					// Draw top of bar
 					ctx.fillStyle = "#6fa2cb";

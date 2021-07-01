@@ -15,7 +15,7 @@ const PanelFooter = props => {
 		</div>
 	);
 
-	const chartButtonContent = (
+	const signalButtonContent = (
 		<div className="button-content-container chart-button-container">
 			<div className="chart-display">
 				<ScrollingChart isActive={props.isActive} />
@@ -30,7 +30,9 @@ const PanelFooter = props => {
 	return (
 		<div className="controls-section">
 			<div className="controls-deco circle"></div>
-			<ActionButton action={props.onDeactivate} content={chartButtonContent} />
+			{/* 'Signal button' on left showing wave animation */}
+			<ActionButton action={props.onDisconnect} content={signalButtonContent} />
+			{/* Activate button on right */}
 			<ActionButton action={props.onActivate} content={activateButtonContent} />
 			<div className="triangle">&#9650;</div>
 		</div>
