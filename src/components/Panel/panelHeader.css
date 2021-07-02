@@ -54,4 +54,53 @@
 .segmented-marker-container {
   height: 40px;
   width: 50px;
+  animation-name: segmented-marker;
+  animation-iteration-count: infinite;
+}
+
+.small-marker-container{
+  animation-name: small-marker;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.marker-group-1 {
+  animation-duration: 4s;
+}
+
+.marker-group-2 {
+  animation-duration: 3.5s;
+}
+
+.marker-group-3 {
+  animation-duration: 4.2s;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes segmented-marker {
+  from {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(110px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes small-marker {
+  from {
+    transform: translateY(140px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(140px);
+  }
 }
