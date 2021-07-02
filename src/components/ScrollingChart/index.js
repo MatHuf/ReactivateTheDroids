@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useSignal } from "../../context/signalContext";
+import { useActivation } from "../../context/activationContect";
 import "./scrollingChart.css";
 
 const ScrollingChart = props => {
@@ -7,6 +8,7 @@ const ScrollingChart = props => {
 	const barPool = useRef([]);
 	const animationTime = useRef(0);
 	const [signal] = useSignal();
+	const [active] = useActivation();
 
 	const draw = isActive => {
 		let canvas = canvasRef.current;
@@ -58,7 +60,7 @@ const ScrollingChart = props => {
 
 		const render = () => {
 			animationTime.current += 0.2;
-			draw(props.isActive);
+			draw(active);
 			frameId = window.requestAnimationFrame(render);
 		};
 		render();

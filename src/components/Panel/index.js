@@ -4,10 +4,11 @@ import PanelMain from "./PanelMain";
 import PanelFooter from "./PanelFooter";
 import { lottiePlayStates, lottiePlayDirections } from "../Lottie";
 import { useSignal } from "../../context/signalContext";
+import { useActivation } from "../../context/activationContect";
 import "./panel.css";
 
 const Panel = props => {
-	const [mainActive, setMainActivate] = useState(false);
+	const [active, setActive] = useActivation(false);
 	const [mainAnimationState, setMainAnimationState] = useState(lottiePlayStates.stop);
 	const [mainAnimationDirection, setMainAnimationDirection] = useState(
 		lottiePlayDirections.forward
@@ -15,16 +16,16 @@ const Panel = props => {
 	const [signal, setSignal] = useSignal();
 
 	const activate = () => {
-		switch (mainActive) {
+		switch (active) {
 			case false:
 				setMainAnimationDirection(lottiePlayDirections.forward);
 				setMainAnimationState(lottiePlayStates.play);
-				setMainActivate(true);
+				setActive(true);
 				break;
 			case true:
 				setMainAnimationDirection(lottiePlayDirections.reverse);
 				setMainAnimationState(lottiePlayStates.play);
-				setMainActivate(false);
+				setActive(false);
 				break;
 			//no default
 		}
@@ -44,7 +45,7 @@ const Panel = props => {
 				direction={mainAnimationDirection}
 				onComplete={onActivateComplete}
 			/>
-			<PanelFooter onActivate={activate} onDisconnect={disconnect} isActive={mainActive} />
+			<PanelFooter onActivate={activate} onDisconnect={disconnect} />
 		</div>
 	);
 };

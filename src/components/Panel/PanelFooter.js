@@ -18,7 +18,7 @@ const PanelFooter = props => {
 	const signalButtonContent = (
 		<div className="button-content-container chart-button-container">
 			<div className="chart-display">
-				<ScrollingChart isActive={props.isActive} />
+				<ScrollingChart />
 			</div>
 			<div className="button-text-left">O</div>
 			<div className="button-text-right">

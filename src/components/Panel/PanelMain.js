@@ -8,13 +8,13 @@ const PanelMain = props => {
 		<div className="droid-section">
 			<div className="droid-display">
 				<div className="display-side-container">
-					<div className="display-top-left flex-to-bottom-right">
+					<div className="display-top-left flex-to-bottom-right overflow-overlay">
 						E<br />Y
 					</div>
 					<div className="display-segmented-container display-segment-margin">
 						<div className="display-left-segment"></div>
 						<div className="display-center-lower-segment"></div>
-						<div className="display-right-segment flex-to-bottom-right">
+						<div className="display-right-segment flex-to-bottom-right overflow-overlay">
 							N<br />H<br />D
 						</div>
 					</div>
@@ -28,14 +28,14 @@ const PanelMain = props => {
 				/>
 				<div className="display-side-container">
 					<div className="display-segmented-container">
-						<div className="display-left-segment flex-to-bottom-left">
+						<div className="display-left-segment flex-to-bottom-left overflow-overlay">
 							H<br />O<br />T
 						</div>
 						<div className="display-center-upper-segment"></div>
 						<div className="display-right-segment"></div>
 					</div>
 					<div className="display-segmented-container display-segment-margin">
-						<div className="display-left-segment flex-to-bottom-left">
+						<div className="display-left-segment flex-to-bottom-left overflow-overlay">
 							R<br />8<br />P
 						</div>
 						<div className="display-center-lower-segment"></div>

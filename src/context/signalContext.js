@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext, createContext } from "react";
 
-const SignalContext = React.createContext([true, () => {}]);
+const SignalContext = createContext([true, () => {}]);
 
-const useSignal = () => React.useContext(SignalContext);
+const useSignal = () => useContext(SignalContext);
 
 const SignalProvider = props => {
 	const [signal, setSignal] = useState(true);
-	return <SignalContext.Provider value={[signal, setSignal]}>{props.children}</SignalContext.Provider>;
+	return (
+		<SignalContext.Provider value={[signal, setSignal]}>{props.children}</SignalContext.Provider>
+	);
 };
 
 export { SignalContext, useSignal, SignalProvider };
