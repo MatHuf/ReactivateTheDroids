@@ -164,3 +164,22 @@
 .animation-container {
   align-self: flex-end;
 }
+
+.warning-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  z-index: 11;
+}
+
+.warning-inner {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.warning-animation {
+  
+  position: absolute;
+}

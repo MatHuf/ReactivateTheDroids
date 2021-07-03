@@ -1,9 +1,13 @@
 import React from "react";
-import Lottie from "../Lottie";
+import Lottie, { lottiePlayStates } from "../Lottie";
 import B1_Activate_Draft from "../../animations/B1_Activate_Draft.json";
+import Warning from "../../animations/Warning.json";
+import { useSignal } from "../../context/signalContext";
 import "./panelMain.css";
 
 const PanelMain = props => {
+	const [signal] = useSignal();
+
 	return (
 		<div className="droid-section">
 			<div className="droid-display">
@@ -19,6 +23,18 @@ const PanelMain = props => {
 						</div>
 					</div>
 				</div>
+				{!signal && (
+					<div className="warning-container">
+						<div className="warning-inner">
+							<Lottie
+								animation={Warning}
+								playState={lottiePlayStates.play}
+								loop={true}
+								className={"warning-animation"}
+							/>
+						</div>
+					</div>
+				)}
 				<Lottie
 					animation={B1_Activate_Draft}
 					playState={props.animationState}
