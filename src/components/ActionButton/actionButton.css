@@ -39,6 +39,14 @@
   border-right: solid 2px var(--active-highlight);
 }
 
+.action-button-container:visited .action-button-bottom {
+  border: none;
+}
+
+.is-active {
+  border: none;
+}
+
 .action-button-active-center  {
   position: absolute;
   top: 5px;

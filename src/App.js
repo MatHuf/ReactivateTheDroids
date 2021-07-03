@@ -1,6 +1,6 @@
 import Panel from "./components/Panel";
 import { SignalProvider } from "./context/signalContext";
-import { ActivationProvider } from "./context/activationContect";
+import { ActivationProvider } from "./context/activationContext";
 
 // Are styles need here?
 import "./App.css";

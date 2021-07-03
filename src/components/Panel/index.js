@@ -4,7 +4,7 @@ import PanelMain from "./PanelMain";
 import PanelFooter from "./PanelFooter";
 import { lottiePlayStates, lottiePlayDirections } from "../Lottie";
 import { useSignal } from "../../context/signalContext";
-import { useActivation } from "../../context/activationContect";
+import { useActivation } from "../../context/activationContext";
 import "./panel.css";
 
 const Panel = props => {

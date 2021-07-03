@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useSignal } from "../../context/signalContext";
-import { useActivation } from "../../context/activationContect";
+import { useActivation } from "../../context/activationContext";
 import "./scrollingChart.css";
 
 const ScrollingChart = props => {

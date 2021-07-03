@@ -31,9 +31,9 @@ const PanelFooter = props => {
 		<div className="controls-section">
 			<div className="controls-deco circle"></div>
 			{/* 'Signal button' on left showing wave animation */}
-			<ActionButton action={props.onDisconnect} content={signalButtonContent} />
+			<ActionButton action={props.onDisconnect}>{signalButtonContent}</ActionButton>
 			{/* Activate button on right */}
-			<ActionButton action={props.onActivate} content={activateButtonContent} />
+			<ActionButton action={props.onActivate}>{activateButtonContent}</ActionButton>
 			<div className="triangle">&#9650;</div>
 		</div>
 	);
