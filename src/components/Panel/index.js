@@ -16,19 +16,11 @@ const Panel = props => {
 	const [signal, setSignal] = useSignal();
 
 	const activate = () => {
-		switch (active) {
-			case false:
-				setMainAnimationDirection(lottiePlayDirections.forward);
-				setMainAnimationState(lottiePlayStates.play);
-				setActive(true);
-				break;
-			case true:
-				setMainAnimationDirection(lottiePlayDirections.reverse);
-				setMainAnimationState(lottiePlayStates.play);
-				setActive(false);
-				break;
-			//no default
-		}
+		active
+			? setMainAnimationDirection(lottiePlayDirections.reverse)
+			: setMainAnimationDirection(lottiePlayDirections.forward);
+		setActive(!active);
+		setMainAnimationState(lottiePlayStates.play);
 	};
 
 	const disconnect = () => {

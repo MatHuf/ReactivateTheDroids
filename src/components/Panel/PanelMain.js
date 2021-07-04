@@ -26,6 +26,9 @@ const PanelMain = props => {
 				{!signal && (
 					<div className="warning-container">
 						<div className="warning-inner">
+							<div className="display-left-segment"></div>
+							<div></div>
+							<div className="display-right-segment"></div>
 							<Lottie
 								animation={Warning}
 								playState={lottiePlayStates.play}
