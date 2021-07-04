@@ -12,6 +12,7 @@ body {
   --bright-highlight: #6fa2cb;
   --dim-highlight: #456883;
   --active-highlight: #d39636;
+  --active-dark: #5A3C16;
 }
 
 code {

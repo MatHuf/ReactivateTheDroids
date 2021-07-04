@@ -8,19 +8,21 @@ import { useActivation } from "../../context/activationContext";
 import "./panel.css";
 
 const Panel = props => {
+	const [signal, setSignal] = useSignal();
 	const [active, setActive] = useActivation(false);
 	const [mainAnimationState, setMainAnimationState] = useState(lottiePlayStates.stop);
 	const [mainAnimationDirection, setMainAnimationDirection] = useState(
 		lottiePlayDirections.forward
 	);
-	const [signal, setSignal] = useSignal();
 
 	const activate = () => {
-		active
-			? setMainAnimationDirection(lottiePlayDirections.reverse)
-			: setMainAnimationDirection(lottiePlayDirections.forward);
-		setActive(!active);
-		setMainAnimationState(lottiePlayStates.play);
+		if (signal) {
+			active
+				? setMainAnimationDirection(lottiePlayDirections.reverse)
+				: setMainAnimationDirection(lottiePlayDirections.forward);
+			setActive(!active);
+			setMainAnimationState(lottiePlayStates.play);
+		}
 	};
 
 	const disconnect = () => {

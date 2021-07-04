@@ -39,10 +39,6 @@
   border-right: solid 2px var(--active-highlight);
 }
 
-.is-active {
-  border: none;
-}
-
 .action-button-active-center  {
   position: absolute;
   top: 5px;
@@ -55,4 +51,55 @@
 .action-button-container:active .action-button-active-center {
   color: var(--active-highlight);
   background: var(--active-highlight);
+}
+
+.action-button-top-animate {
+  animation-name: border-top-active;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.action-button-bottom-animate {
+  animation-name: border-bottom-active;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.action-button-container-animate {
+  animation-name: container-active;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes border-top-active {
+  0% {
+    border-left: solid 2px var(--active-highlight);
+    border-top: solid 2px var(--active-highlight);
+    border-right: solid 2px var(--active-highlight);
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes border-bottom-active {
+  0% {
+    border-left: solid 2px var(--active-highlight);
+    border-bottom: solid 2px var(--active-highlight);
+    border-right: solid 2px var(--active-highlight);
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes container-active {
+  0% {
+    color: var(--active-highlight);
+    background: var(--active-highlight);
+  }
+  100% {
+    color: var(--active-highlight);
+    background: var(--active-dark);
+  }
 }

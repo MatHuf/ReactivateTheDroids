@@ -1,9 +1,12 @@
 import React from "react";
 import ActionButton from "../ActionButton";
 import ScrollingChart from "../ScrollingChart";
+import { useActivation } from "../../context/activationContext";
 import "./panelFooter.css";
 
 const PanelFooter = props => {
+	const [active] = useActivation();
+
 	const activateButtonContent = (
 		<div className="button-content-container">
 			<div className="button-text-left">
@@ -30,10 +33,12 @@ const PanelFooter = props => {
 	return (
 		<div className="controls-section">
 			<div className="controls-deco circle"></div>
-			{/* 'Signal button' on left showing wave animation */}
+			{/* Signal button on left showing wave animation */}
 			<ActionButton action={props.onDisconnect}>{signalButtonContent}</ActionButton>
 			{/* Activate button on right */}
-			<ActionButton action={props.onActivate}>{activateButtonContent}</ActionButton>
+			<ActionButton action={props.onActivate} active={active}>
+				{activateButtonContent}
+			</ActionButton>
 			<div className="triangle">&#9650;</div>
 		</div>
 	);
