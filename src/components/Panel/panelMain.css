@@ -179,7 +179,8 @@
   width: 120px;
   display: grid;
   grid-template-columns: 4fr 1fr 4fr;
-  background-color: #092968;
+  background-color: var(--dark-background);
+  border: solid 5px var(--dark-background);
 }
 
 .warning-animation {

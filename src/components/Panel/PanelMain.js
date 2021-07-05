@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie, { lottiePlayStates } from "../Lottie";
-import B1_Activate_Draft from "../../animations/B1_Activate_Draft.json";
+import B1_Activate_Rev1 from "../../animations/B1_Activate_Rev1.json";
 import Warning from "../../animations/Warning.json";
 import { useSignal } from "../../context/signalContext";
 import "./panelMain.css";
@@ -39,7 +39,7 @@ const PanelMain = props => {
 					</div>
 				)}
 				<Lottie
-					animation={B1_Activate_Draft}
+					animation={B1_Activate_Rev1}
 					playState={props.animationState}
 					onComplete={props.onComplete}
 					direction={props.direction}

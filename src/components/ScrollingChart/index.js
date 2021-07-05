@@ -68,7 +68,7 @@ const ScrollingChart = props => {
 		return () => {
 			window.cancelAnimationFrame(frameId);
 		};
-	}, [draw]);
+	}, [draw]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const populatePool = () => {
 		for (let i = 0; i < 23; i++) {

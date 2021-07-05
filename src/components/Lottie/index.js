@@ -19,7 +19,7 @@ const Lottie = props => {
 			}
 			setLottieInstance(newInstance);
 		}
-	}, [props.animation]);
+	}, [props.animation]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		if (lottieInstance && props.playState) {
@@ -57,7 +57,7 @@ const Lottie = props => {
 				lottieInstance.removeEventListener("complete", props.onComplete);
 			}
 		};
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return <div id={props.id ?? ""} ref={lottieContainer} className={props.className ?? ""}></div>;
 };

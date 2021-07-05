@@ -1,7 +1,7 @@
 .panel-container {
   height: 600px;
   border: solid black 25px;
-  background-color: #092968;
+  background-color: var(--dark-background);
   border-radius: 50px;
   width: 300px;
   display: grid;
