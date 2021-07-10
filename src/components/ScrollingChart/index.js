@@ -3,7 +3,7 @@ import { useSignal } from "../../context/signalContext";
 import { useActivation } from "../../context/activationContext";
 import "./scrollingChart.css";
 
-const ScrollingChart = props => {
+const ScrollingChart = () => {
 	const canvasRef = useRef();
 	const barPool = useRef([]);
 	const animationTime = useRef(0);
@@ -71,9 +71,13 @@ const ScrollingChart = props => {
 	}, [draw]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const populatePool = () => {
-		for (let i = 0; i < 23; i++) {
+		// Magic numbers to fill button with bars
+		const minBars = 23;
+		const barSpacing = 14;
+
+		for (let i = 0; i < minBars; i++) {
 			barPool.current.push({
-				position: i * 14,
+				position: i * barSpacing,
 			});
 		}
 	};
