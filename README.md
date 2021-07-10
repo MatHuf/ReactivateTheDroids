@@ -1,6 +1,6 @@
 # Reactivate the Droids
 
-An adaptation of the interface used to activate the battle droids in Star Wars Episode I: The Phantom Menace created to explore animation in React framework.
+An adaptation of the interface used to activate the battle droids in Star Wars Episode I: The Phantom Menace created to explore animation in React framework. This is seen on screen at around 1h 49m.
 
 ## Interface
 
@@ -20,4 +20,8 @@ A canvas element is used to display the wave form on the left side button. See S
 
 ### CSS Keyframes
 
-Keyframes are used for the more simplistic animations of the meters at the top of the interface and the activation button. See ActionButton and PanelHeader components as well as actionButton.css and panelHeader.css.
+Keyframes are used for the animations of the meters at the top of the interface and the activation button. See ActionButton and PanelHeader components as well as actionButton.css and panelHeader.css.
+
+## Font
+
+The unique text on the display was made possible by converting the [TF Gunray font by AurekFonts](https://aurekfonts.github.io/?font=TFGunray) to WOFF2 format.
