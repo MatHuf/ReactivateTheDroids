@@ -2,6 +2,8 @@
 
 An adaptation of the interface used to activate the battle droids in Star Wars Episode I: The Phantom Menace created to explore animation in React framework. This is seen on screen at around 1h 49m.
 
+[View demo](https://mystifying-dijkstra-4b2601.netlify.app)
+
 ## Interface
 
 We only see the button at bottom right used on screen to activate the battle droids. What appears to be another button to the left displays a wave form that gains intensity after activation. Took some liberties with this and made the button function as a "signal cut" that disables the interface until restored.
