@@ -7,7 +7,7 @@ import { useSignal } from "../../context/signalContext";
 import { useActivation } from "../../context/activationContext";
 import "./panel.css";
 
-const Panel = props => {
+const Panel = () => {
 	const [signal, setSignal] = useSignal();
 	const [active, setActive] = useActivation(false);
 	const [mainAnimationState, setMainAnimationState] = useState(lottiePlayStates.stop);

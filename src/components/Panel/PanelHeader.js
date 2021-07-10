@@ -4,7 +4,7 @@ import SmallMarker from "./SmallMarker";
 import { useSignal } from "../../context/signalContext";
 import "./panelHeader.css";
 
-const PanelHeader = props => {
+const PanelHeader = () => {
 	const [signal] = useSignal();
 
 	let pausedClassName = signal ? "" : "paused";

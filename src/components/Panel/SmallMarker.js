@@ -1,7 +1,7 @@
 import React from "react";
 import "./smallMarker.css";
 
-const SmallMarker = props => {
+const SmallMarker = () => {
 	return <div className="small-marker"></div>;
 };
 

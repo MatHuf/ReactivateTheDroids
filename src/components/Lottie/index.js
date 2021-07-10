@@ -5,7 +5,6 @@ const Lottie = props => {
 	const [lottieInstance, setLottieInstance] = useState();
 	const lottieContainer = useRef();
 
-	// TODO handle this initial config better
 	useEffect(() => {
 		if (props.animation) {
 			let lottieConfig = {
@@ -16,6 +15,9 @@ const Lottie = props => {
 			let newInstance = lottie.loadAnimation(lottieConfig);
 			if (lottieInstance) {
 				lottieInstance.destroy();
+			}
+			if (props.onComplete) {
+				newInstance.addEventListener("complete", props.onComplete);
 			}
 			setLottieInstance(newInstance);
 		}
@@ -44,22 +46,16 @@ const Lottie = props => {
 		}
 	}, [props.direction, lottieInstance]);
 
-	// TODO move to config?
-	useEffect(() => {
-		if (props.onComplete && lottieInstance) {
-			lottieInstance.addEventListener("complete", props.onComplete);
-		}
-	}, [props.onComplete, lottieInstance]);
-
 	useEffect(() => {
 		return () => {
+			// TODO how to handle this if onComplete gets changed?
 			if (props.onComplete && lottieInstance) {
 				lottieInstance.removeEventListener("complete", props.onComplete);
 			}
 		};
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-	return <div id={props.id ?? ""} ref={lottieContainer} className={props.className ?? ""}></div>;
+	return <div ref={lottieContainer} className={props.className ?? ""}></div>;
 };
 
 export default Lottie;
