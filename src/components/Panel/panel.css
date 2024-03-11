@@ -21,6 +21,6 @@
   align-items: flex-end;
 }
 
-.overflow-overlay {
-  overflow: overlay;
+.overflow-hidden {
+  overflow: hidden;
 }
